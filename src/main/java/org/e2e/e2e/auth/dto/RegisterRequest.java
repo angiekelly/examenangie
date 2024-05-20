@@ -1,6 +1,5 @@
 package org.e2e.e2e.auth.dto;
 
-import org.e2e.e2e.driver.domain.Category;
 import org.e2e.e2e.vehicle.dto.VehicleBasicDto;
 
 import lombok.Data;

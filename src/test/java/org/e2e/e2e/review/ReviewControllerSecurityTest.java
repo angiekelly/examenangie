@@ -1,8 +1,8 @@
 package org.e2e.e2e.review;
 
 import org.e2e.e2e.coordinate.domain.Coordinate;
-import org.e2e.e2e.driver.domain.Driver;
-import org.e2e.e2e.driver.infrastructure.DriverRepository;
+import org.e2e.e2e.driver.domain.Empleado;
+import org.e2e.e2e.driver.infrastructure.EmpleadoRepository;
 import org.e2e.e2e.exceptions.ResourceNotFoundException;
 import org.e2e.e2e.passenger.domain.Passenger;
 import org.e2e.e2e.passenger.infrastructure.PassengerRepository;
@@ -45,7 +45,7 @@ public class ReviewControllerSecurityTest {
     PassengerRepository passengerRepository;
 
     @Autowired
-    DriverRepository driverRepository;
+    EmpleadoRepository driverRepository;
 
     @Autowired
     RideRepository rideRepository;
@@ -149,7 +149,7 @@ public class ReviewControllerSecurityTest {
                 .orElseThrow(() -> new ResourceNotFoundException("Passenger not found"));
         review.setAuthor(author);
 
-        Driver target = driverRepository
+        Empleado target = driverRepository
                 .findByEmail("johndoe@example.com")
                 .orElseThrow(() -> new ResourceNotFoundException("Driver not found"));
         review.setTarget(target);

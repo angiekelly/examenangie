@@ -2,7 +2,7 @@ package org.e2e.e2e.ride;
 
 import org.e2e.e2e.coordinate.domain.Coordinate;
 import org.e2e.e2e.coordinate.infrastructure.CoordinateRepository;
-import org.e2e.e2e.driver.infrastructure.DriverRepository;
+import org.e2e.e2e.driver.infrastructure.EmpleadoRepository;
 import org.e2e.e2e.exceptions.ResourceNotFoundException;
 import org.e2e.e2e.passenger.domain.Passenger;
 import org.e2e.e2e.passenger.infrastructure.PassengerRepository;
@@ -36,7 +36,7 @@ public class RideControllerSecurityTest {
     private MockMvc mockMvc;
 
     @Autowired
-    DriverRepository driverRepository;
+    EmpleadoRepository driverRepository;
 
     @Autowired
     PassengerRepository passengerRepository;

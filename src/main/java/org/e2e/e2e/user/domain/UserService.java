@@ -1,6 +1,6 @@
 package org.e2e.e2e.user.domain;
 
-import org.e2e.e2e.driver.infrastructure.DriverRepository;
+import org.e2e.e2e.driver.infrastructure.EmpleadoRepository;
 import org.e2e.e2e.passenger.exceptions.UnauthorizeOperationException;
 import org.e2e.e2e.passenger.infrastructure.PassengerRepository;
 import org.e2e.e2e.user.infrastructure.BaseUserRepository;
@@ -19,7 +19,7 @@ public class UserService {
     @Autowired
     private PassengerRepository passengerRepository;
     @Autowired
-    private DriverRepository driverRepository;
+    private EmpleadoRepository driverRepository;
 
     public User findByEmail(String username, String role) {
         User user;

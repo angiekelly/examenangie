@@ -8,7 +8,7 @@ import org.e2e.e2e.auth.dto.LoginRequest;
 import org.e2e.e2e.auth.dto.RegisterRequest;
 import org.e2e.e2e.auth.exceptions.UsernameAlreadyExistException;
 import org.e2e.e2e.config.JwtService;
-import org.e2e.e2e.driver.domain.Driver;
+import org.e2e.e2e.driver.domain.Empleado;
 import org.e2e.e2e.passenger.domain.Passenger;
 import org.e2e.e2e.user.domain.Role;
 import org.e2e.e2e.user.domain.User;
@@ -53,7 +53,7 @@ public class AuthService {
         if (user.isPresent()) throw new UsernameAlreadyExistException("Email is already registered");
         
         if(req.getIsDriver()) {
-        	Driver driver = new Driver();
+        	Empleado driver = new Empleado();
         	driver.setCategory(req.getCategory());
         	driver.setVehicle(modelMapper.map(req.getVehicle(),Vehicle.class));
         	driver.setTrips(0);

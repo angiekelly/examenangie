@@ -1,7 +1,7 @@
 package org.e2e.e2e.driver;
 
-import org.e2e.e2e.driver.domain.Driver;
-import org.e2e.e2e.driver.infrastructure.DriverRepository;
+import org.e2e.e2e.driver.domain.Empleado;
+import org.e2e.e2e.driver.infrastructure.EmpleadoRepository;
 import org.e2e.e2e.utils.Reader;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,7 +32,7 @@ public class DriverControllerSecurityTest {
     private MockMvc mockMvc;
 
     @Autowired
-    private DriverRepository driverRepository;
+    private EmpleadoRepository driverRepository;
 
     @Autowired
     Reader reader;
@@ -93,7 +93,7 @@ public class DriverControllerSecurityTest {
     @WithMockUser(value = "other@example.com", roles = "DRIVER")
     public void testUnauthorizedAccessToDeleteDriverById() throws Exception {
         createUnauthorizedDriver();
-        Driver authorizedDriver = driverRepository
+        Empleado authorizedDriver = driverRepository
                 .findByEmail("johndoe@example.com")
                 .orElseThrow();
 
